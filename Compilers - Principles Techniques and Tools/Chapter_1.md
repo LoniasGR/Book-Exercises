@@ -81,3 +81,43 @@ The assembler needs
     * Imperative
     * Von Neumann
     * Third-generation
+
+# Section 1.6
+
+## Excercise 1.6.1
+
+~~~
+w = 13
+x = 9
+y = 13
+z = 9
+~~~
+## Excercsise 1.6.2
+
+~~~
+w = 9  
+x = 7  
+y = 13  
+z = 7  
+~~~
+
+## Excercise 1.6.3
+
+w in B1 | B1 - B2  
+x in B1 | B1  
+z in B1 | B1, B3  
+y in B1 | B1 - B4  
+x in B2 | B2  
+z in B2 | B2 - B3  
+w in B3 | B3  
+x in B3 | B3  
+w in B4 | B4 - B5  
+x in B4 | B4 - B5  
+y in B5 | B5  
+z in B5 | B5  
+
+## Excercise 1.6.4
+~~~
+3
+2
+~~~
