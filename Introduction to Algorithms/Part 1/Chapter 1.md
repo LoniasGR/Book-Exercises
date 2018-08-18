@@ -1,12 +1,10 @@
 # Chapter 1 #
 
-## Part 1 ##
-
-### 1.1-1 ###
+## 1.1-1 ##
 
 Sorting: In schools, when students have to sit alphabetically, the list is sorted.
 
-### 1.1-2 ###
+## 1.1-2 ##
 
 Some other stuff can be:
 
@@ -14,7 +12,7 @@ Some other stuff can be:
 * How easy to understand the algorithm is.
 * Number of accesses to the memory.
 
-### 1.1-3 ###
+## 1.1-3 ##
 
 We chose a simple linked list.
 
@@ -29,7 +27,7 @@ We chose a simple linked list.
 * Have to go through the whole list to add something in the end.
 * When searching, have to go through the list linearly.
 
-### 1.1-4 ###
+## 1.1-4 ##
 
 **Similarities:**
 
@@ -41,7 +39,7 @@ We chose a simple linked list.
 * The starting node and the ending node have to be the same in TSP.
 * The path has to go through all the nodes in TSP.
 
-### 1.1-5 ###
+## 1.1-5 ##
 
 **Optimal solution is necessary:**
 
