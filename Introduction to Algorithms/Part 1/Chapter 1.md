@@ -20,7 +20,7 @@ We chose a simple linked list.
 
 * Exactly as much space as needed.
 * Easy to add new elements in between existing ones.
-* Easy to remove elements and keep the list in useable state. 
+* Easy to remove elements and keep the list in useable state.
 
 **Disadvantages**:
 
@@ -46,5 +46,5 @@ We chose a simple linked list.
 Scheduling the classes at university. If two from the same year overlap, it is unacceptable, as the same people have to be at different places at the same time. Here an optimal solution is needed.
 
 **Non optimal solution is ok:**
- 
+
 GPS - Going from one place to another. We can pick a path that is not optimal, but it's ok since we still will get to the destination.
