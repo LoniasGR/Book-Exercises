@@ -41,7 +41,7 @@
 
 \maketitle
 
-In this case, we need to figure out when $ 8 * n^{2} \leq 64* n * \log{n} $.
+In this case, we need to figure out when $ 8 * n^{2} \leq 64* n * \lg{n} $.
 
 By plotting it in Matlab, we have the Figure \ref{fig:plot1}:
 
@@ -55,14 +55,13 @@ By plotting it in Matlab, we have the Figure \ref{fig:plot1}:
 The Matlab code we used is the following:
 
 \begin{lstlisting}[language=Matlab]
-    plot(x,y1,x,y2)
-    x = linspace(0,60);
+    x = linspace(0,10);
     y1 = 8 * x.^2;
-    y2 = 64 * x .* log(x);
+    y2 = 64 * x .* log10(x);
     figure();
     plot(x,y1,x,y2);
-    legend('8*n^2','64*n*logn');
+    legend('8*n^2','64*n*lgn');
 \end{lstlisting}
 
-As we see the period that $8*n^{2}$ is faster than $64*n*\log{n}$ is between 1 and 25. This is easy to calculate from seing the plot and a little bit of trial and error in the edges. \textbf{Keep in mind, that since we are talking about inputs, we are only interested in intergers.}
+As we see the period that $8*n^{2}$ is faster than $64*n*\lg{n}$ is between 1 and 6. This is easy to calculate from seing the plot and a little bit of trial and error in the edges. \textbf{Keep in mind, that since we are talking about inputs, we are only interested in intergers.}
 \end{document}
