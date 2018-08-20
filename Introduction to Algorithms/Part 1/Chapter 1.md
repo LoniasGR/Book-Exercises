@@ -61,6 +61,9 @@ As we know from Artificial Intelligence classes, there is an algorithm like A* u
 
 ### 1.2-2 ###
 
-In this case, we need to figure out when *8n<sup>2</sup> &le; 64nlogn*.
+See file 'Chapter 1 Excercise 1.2-2.pdf'.
 
-By making the calculations, we have: *n &le; 8logn*.
+### 1.2-3 ###
+
+See file 'Chapter 1 Excercise 1.2-3.pdf'.
+
