@@ -2,3 +2,8 @@
 *.exe
 a.out
 .vscode
+*.gz
+*.log
+*.aux
+*.fdb_latexmk
+*.fls
