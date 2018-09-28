@@ -1,0 +1,380 @@
+\documentclass{article}
+
+    % Input language encoding
+    %\usepackage[utf8]{inputenc}
+   
+    % Output languages
+    %\usepackage[greek, english]{babel}
+    % \usepackage{alphabeta}
+    
+    % Fonts
+    %\usepackage[T1,LGR]{fontenc}
+    \usepackage{lmodern}
+
+    % Images
+    \usepackage{graphicx}
+    \usepackage{float}
+    \usepackage{caption}
+    \usepackage{subcaption}
+
+    % Math
+    \usepackage{amsmath}
+
+    % Paragraph Formatting
+    \usepackage{parskip}
+
+    % Code
+    \usepackage{listings}
+
+        
+
+    \DeclareMathSizes{10}{10}{10}{10}
+    \setlength{\parindent}{0cm}
+
+    \title{Chapter 1}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\date{}
+\author{}
+
+\maketitle
+
+\section*{SECTION 1.1 Sets}
+
+\subsection*{Problem 1}
+According to the description of the problem, we have:\\
+$A = \{2, 4, 6\}$ and $B = \{4, 5, 6\}$\\
+$\Omega = \{1, 2, 3, 4, 5, 6\}$
+
+So we get the following for the 1st of DeMorgan's law:
+\begin{gather*}
+    (A \cup B)^{c} =  (\{2, 4, 6\} \cup \{4, 5, 6 \})^{c} = \{2, 4, 5, 6\}^{c} = \{1, 3\} \\
+    A^{c} \cap B^{c} = \{2, 4, 6\}^{c} \cap \{4, 5, 6\}^{c} = \{1, 3, 5\} \cap \{1, 2, 3\} = \{1, 3\} 
+\end{gather*}
+
+So we see that $(A \cup B)^{c} = A^{c} \cap B^{c}$ holds true.
+
+For the second DeMorgan's law, we have:
+\begin{gather*}
+    (A \cap B)^{c} = (\{2, 4, 6\} \cap \{4, 5, 6\})^{c} = \{4, 6\}^{c} = \{1, 2, 3, 5\} \\
+    A^{c} \cup B^{c} = \{2, 4, 6\}^{c} \cup \{4, 5, 6\}^{c} = \{1, 3, 5\} \cup \{1, 2, 3\} = \{1, 2, 3, 5\}
+\end{gather*}
+
+So again we see that those two are equal.
+
+\subsection*{Problem 2}
+
+\subsubsection*{(a)}
+
+We will start from $A^{c}$ and build the equation:
+
+\begin{gather*}
+    A^{c} = \\
+    A^{c} \cap \Omega = \\
+    A^{c} \cap (B \cup B^{c}) = \\
+    (A^{c} \cap B) \cup (A^{c} \cap B^{c})
+\end{gather*}
+
+In a similar fashion we do $B^{c}$:
+
+
+\begin{gather*}
+    B^{c} = \\
+    B^{c} \cap \Omega = \\
+    B^{c} \cap (A \cup A`^{c}) = \\
+    (B^{c} \cap A) \cup (B^{c} \cap A^{c}) = \\
+    (A \cap B^{c}) \cup (A^{c} \cap B^{c})
+\end{gather*}
+
+\subsubsection*{b}
+
+Starting from the results of (a), we get:
+
+\begin{gather*}
+    A^{c} \cup B^{c} \stackrel{\text{\tiny{DeMorgan}}}{=} \\
+    (A \cap B)^{c} = (A^{c} \cap B) \cup (A^{c} \cap B^{c}) \cup (A \cap B^{c}) \cup (A^{c} \cap B^{c}) = \\
+    (A^{c} \cap B) \cup (A^{c} \cap B^{c}) \cup (A^{c} \cap B^{c})
+\end{gather*}
+
+\subsubsection*{c}
+
+From the description, we know that \\
+$A = \{1, 3, 5\}$ and $B = \{1, 2, 3\}$.
+
+Based on that, we have:
+
+\begin{gather*}
+    (A \cap B)^{c} = \\
+    (\{1, 3, 5\} \cap \{1, 2, 3\})^{c} = \\
+    \{1, 3\}^{c} = \\
+    \{2, 4, 5, 6\}
+\end{gather*}
+
+Similarly we have:
+
+\begin{gather*}
+    (A^{c} \cap B) \cup (A^{c} \cap B^{c}) \cup (A \cap B^{c}) = \\
+    (\{1, 3, 5\}^{c} \cap \{1, 2, 3\}) \cup (\{1, 3, 5\}^{c} \cap \{1, 2, 3\}^{c}) \cup (\{1, 3, 5\} \cap \{1, 2, 3\}^{c}) = \\
+    (\{2, 4, 6\} \cap \{1, 2, 3\}) \cup (\{2, 4, 6\} \cap \{4, 5, 6\}) \cup (\{1, 3, 5\} \cap \{4, 5, 6\}) = \\
+    \{2\} \cup \{4, 6\} \cup \{5\} = \\
+    \{2, 4, 5, 6\}
+\end{gather*}
+
+So the equation in (b) holds true.
+
+\subsection*{SECTION 1.2 Probabilistic Models}
+
+\subsubsection*{Problem 5}
+
+We call A the fact that they are geniouses, so $P(A) = 0.6$. \\
+We call B the fact that they love chocolate, so $P(B) = 0.7$. \\
+We also know that $P(A \cap B) = 0.4$.
+
+We want to find out $P(A^{c} \cap B^{c})$.
+
+From DeMorgan's law, we know that $A^{c} \cap B^{c} = (A \cup B)^{c}$.
+
+We also know that $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
+
+Finally $P((A \cup B)^{c}) = 1 - P(A \cup B)$.
+
+So e get that $P(A^{c} \cap B^{c}) =1 - 0.6 + 0.7 - 0.4 = 1 - 0.9 = 0.1$.
+
+
+\subsubsection*{Problem 6}
+
+We have a 6-sided dice. Every even side has double the chance of an odd side. So we consider as having $3 + 6$ sides. Then one odd side has a chance of $P(O) = \frac{1}{9}$, while each even side has a chance of $P(E) = \frac{2}{9}$.
+
+So for $P(Roll < 4)$, we have:
+\begin{gather*}
+    P(Roll < 4) = P(1) + P(2) + P(3) = \\
+    \frac{1}{9} + \frac{2}{9} + \frac{1}{9} = \\
+    \frac{4}{9}
+\end{gather*}
+
+\subsubsection*{Problem 7}
+
+We name O the fact that the roll is Odd.\\
+We name E the fact that the roll is Even.
+
+The sample space for this experiment would be 
+
+
+$\Omega = \{E, OE, OOE, OOOE, ...\}$
+
+So the probability of it would be $(\frac{1}{4})^{n}$, where n is the tries before getting an even number.
+
+\subsubsection*{Problem 8}
+
+There are three opponents, A, B and C. Without the loss of accuracy, we can assume that $P(A) > P(B) > P(C)$, where P denotes the chance of victory.
+
+There are the following ways to play with all opponents:
+
+\begin{itemize}
+    \item A, B, C
+    \item A, C, B
+    \item B, A, C
+    \item B, C, A
+    \item C, B, A
+    \item C, A, B
+\end{itemize}
+
+We have to win two games in a row to succeed. So of course, in order to maximize the chances of winning, by logic, we understand that we want to play with the two easiest opponents in a row, because $P(B)*P(C)$ is the bigger number. So, we are left with the following options:
+
+\begin{itemize}
+    \item A, B, C
+    \item A, C, B
+    \item B, C, A
+    \item C, B, A
+\end{itemize}
+
+What we see is that if we play first with A and then with B, we have $P(A)*P(B)$, which is smaller than $P(B)*P(C)$ and $P(A)*P(C)$. So we are waisting our chances if we go with the two hardest opponents in a row. So it is better to put C in the middle, so all the two in a row battles have the smallest chance. So we are left with the following options:
+
+
+\begin{itemize}
+    \item A, C, B
+    \item B, C, A
+\end{itemize}
+
+
+\subsubsection*{Problem 9}
+
+\subsubsection*{a}
+
+The collection of disjoint events $S_{1},...,S_{n}$ is a partition of $\Omega$.
+So if we have any event A, this will be overlapping with the already existing partitions $S_{i}$. 
+
+In other words:
+
+\begin{gather*}
+    A = A \cap \Omega \Rightarrow \\
+    A = A \cap \bigcup_{i=1}^{n}S_{i} \Rightarrow \\
+    A = \bigcup_{i=1}^{n}(A \cap S_{i}) \Rightarrow \\
+    P(A) = P(\bigcup_{i=1}^{n}(A \cap S_{i})).
+\end{gather*}
+
+Because the sets are disjoint, their intersection with A is still disjoint, so we get:
+\begin{gather*}
+    P(A) = \sum_{i=1}^{n}P(A \cap S_{i})    
+\end{gather*}
+
+\subsubsection*{b}
+
+We try to create a distinct particion of $\Omega$. This is $\{B\cap C^{c}, B^{c} \cap C, B \cap C, B^{c} \cap C^{c}\}$.
+
+So from (a), we have that:
+
+\begin{gather*}
+    P(A) = P(A \cap B\cap C^{c}) + P(A \cap B^{c} \cap C) + P(A \cap B \cap C) + P(A \cap B^{c} \cap C^{c})
+\end{gather*}
+
+But we can easily see that
+\begin{gather*}
+    P(A \cap B) + P(A \cap C) = P(A \cap B\cap C^{c}) + P(A \cap B^{c} \cap C) + 2 * P(A \cap B \cap C).
+\end{gather*}
+
+So in the end we get $P(A) = P(A \cap B) + P(A \cap C) + P(A \cap B^{c} \cap C^{c}) - P(A \cap B \cap C)$.
+
+\subsubsection*{Problem 10}
+
+We know that $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
+
+We also see that $P(A \cap B^{c}) = P(A \cup B) - P(B)$.
+
+Similarly $P(A^{c} \cap B) = P(A \cup B) - P(A)$.
+
+We can easily see that these two sets are disjoint, since each gives the probability of exactly one of A or B occuring.
+
+So we have,
+\begin{gather*}
+    P((A^{c} \cap B) \cup (A \cap B^{c})) =\\
+    P(A^{c} \cap B) + P(A \cap B^{c}) = \\
+    2 * P(A \cup B) - P(A) - P(B) = \\
+    P(A) + P(B) - 2 * P(A \cap B).
+\end{gather*}
+
+\subsubsection*{Problem 14}
+
+\subsubsection*{a}
+
+$A = \{11, 22, 33, 44, 55, 66\}$.
+Also $N(\Omega) = 36$.
+So we get that the chance for doubles is $P(A) = \frac{N(A)}{N(\Omega)} = \frac{6}{36} = \frac{1}{6}$.
+
+\subsubsection*{b}
+
+B is the set of outcomes that result in a sum of 4 or less, so:
+
+\begin{gather*}
+    B = \{11, 12, 13, 21, 22, 31\} \\
+    P(B) = \frac{6}{36} = \frac{1}{6}
+\end{gather*}
+
+According to the conditional probability, we have:
+
+\begin{gather*}
+    P(A|B) = \frac{P(A \cap B)}{P(B)} = \\
+    \frac{\frac{2}{36}}{\frac{6}{36}} = \frac{2}{6} = \frac{1}{3}
+\end{gather*}
+
+\subsubsection*{c}
+
+There are 6 possibilities the first roll to be 6 (second roll can be from 1 to 6) and another 5 for the second roll to be 6 (first roll to be from 1 to 5, the possibility to be the first roll 6 was covered in the first case), for a total of 11.
+
+So $P(C) = \frac{11}{36}$.
+
+\subsubsection*{d}
+
+The probability of the two dice to land on different numbers is $P(D) = P(A^{c}) = \frac{30}{36}$.
+
+We want to find the conditional probability $P(C | D)$.
+
+So,
+
+\begin{gather*}
+    P(C|D) = \frac{P(C \cap D)}{P(D)} = \\
+    \frac{\frac{10}{36}}{\frac{30}{36}} = \frac{10}{30} = \frac{1}{3}
+\end{gather*}
+
+\subsubsection*{Problem 15}
+
+
+
+A is the first toss is heads. \\
+B is the second toss is heads.
+
+We must compare $P(A \cap B | A)$ with $P((A \cap B)|( A \cup B))$.
+ We have:
+ \begin{gather*}
+    P(A \cap B | A) = \frac{P(A \cap B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)} \\
+    P((A \cap B)| (A \cup B)) = \frac{P((A \cap B) \cap (A \cup B))}{P(A \cup B)} = \frac{P(A \cap B)}{P(A \cup B)}
+ \end{gather*}
+We have that $P(A \cup B) \geq P(A)$, which means that the first conditional probability is at least as large.
+
+It seems that it does not matter if the coin is fair or not. 
+
+If the coin is fair:
+
+A is the first toss is heads. \\
+B is there is at least one heads toss. \\
+C is we have two heads.
+
+Alice suggests that $P(C|A) = P(C|B)$.
+
+$A = \{HT, HH\}$ with $P(A) = \frac{2}{4}$. \\
+$B = \{HT, TH, HH\}$ with $P(B) = \frac{3}{4}$. \\
+$C = \{HH\}$ with $P(C) = \frac{1}{4}$.
+
+We will calculate both:
+
+\begin{gather*}
+    P(C|A) = \frac{P(C \cap A)}{P(A)} = \frac{\frac{1}{4}}{\frac{2}{4}} = \frac{1}{2}.\\
+    P(C|B) = \frac{P(C \cap B)}{P(B)} = \frac{\frac{1}{4}}{\frac{3}{4}} = \frac{1}{3}.
+\end{gather*}
+
+We can generalize in the case that we have three events A, B, C with $A \subset B \subset C$, then the probability of A happening if we know that B happened is at least as probable as if we know that C happened.
+
+\subsubsection*{Problem 16}
+
+A: probability the coin toss result is heads: $P(A) = \frac{3}{6} = \frac{1}{2}$.
+
+B: probability to pick the normal coin, with $P(B) = \frac{1}{3}$.
+
+We want the probability of B given that A happened. 
+So we have:
+
+\begin{gather*}
+    P(B|A) = \frac{P(B \cap A)}{P(A)} = \\
+    \frac{\frac{1}{6}}{\frac{1}{2}} = \frac{1}{3}
+\end{gather*}
+
+Where $P(B \cap A)$ means that probability of getting a heads result and the coin is the normal one.
+
+\subsubsection*{Problem 17}
+
+We want the probability $P(A_1 \cap A_2 \cap A_3 \cap A_4)$, where $A_i$ means that the test is not defective.
+
+So we can get this by calculating $P(A_1)P(A_2|A_1)P(A_3|A_1 \cap A_2)P(A_4| A_3 \cap A_2 \cap A_1)$.
+
+\begin{gather*}
+P(A_1) = \frac{95}{100} \\
+P(A_2|A_1) = \frac{94}{99} \\
+P(A_3|A_1 \cap A_2) = \frac{93}{98} \\
+P(A_4| A_3 \cap A_2 \cap A_1) = \frac{92}{97}
+\end{gather*}
+
+So in total we have $\frac{95}{100} * \frac{94}{99} * \frac{93}{98} * \frac{92}{97} = 0.81$.
+
+\subsubsection*{Problem 18}
+
+\begin{gather*}
+    P(A \cap B|B) = \\
+    \frac{P(A \cap B \cap B)}{P(B)} = \\
+    \frac{P(A \cap (B \cap B))}{P(B)} = \\
+    \frac{A \cap B}{P(B)} = \\
+    P(A|B)
+\end{gather*}
+
+\end{document}
