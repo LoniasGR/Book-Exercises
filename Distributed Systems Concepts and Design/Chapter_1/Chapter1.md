@@ -1,6 +1,6 @@
-# Chapter 1#
+# Chapter 1 #
 
-##Exercise 1##
+## Exercise 1 ##
 
 __Hardware resources:__
 
@@ -32,7 +32,7 @@ benchmarks on the same server.
 10. Live streaming a football game.
 
 
-## Excercise 2##
+## Excercise 2 ##
 
 If we know the delay of the network, then it is easy to synchronize 
 the clock. Another way would be that at a specific point at the 
@@ -54,7 +54,7 @@ computer. Still the calculation would have a lot of accuracy problems and
 there would need to exist a master computer that according to it the clock 
 is set.
 
-##Excercise 3##
+
 
 
 
