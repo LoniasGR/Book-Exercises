@@ -1,0 +1,188 @@
+\documentclass{article}
+
+    % Input language encoding
+    %\usepackage[utf8]{inputenc}
+   
+    % Output languages
+    %\usepackage[greek, english]{babel}
+    % \usepackage{alphabeta}
+    
+    % Fonts
+    %\usepackage[T1,LGR]{fontenc}
+    \usepackage{lmodern}
+
+    % Images
+    \usepackage{graphicx}
+    \usepackage{float}
+    \usepackage{caption}
+    \usepackage{subcaption}
+
+    % Math
+    \usepackage{amsmath}
+
+    % Paragraph Formatting
+    \usepackage{parskip}
+
+    % Code
+    \usepackage{listings}
+    \usepackage{fancyvrb}
+
+
+        
+
+    \DeclareMathSizes{10}{10}{10}{10}
+    \setlength{\parindent}{0cm}
+
+    \title{Chapter 1}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\date{}
+\author{}
+
+\maketitle
+
+\section*{1.1.1 Excercises for Section 1.1}
+
+\subsection*{Excercise 1.1.1}
+Compiler: Generates a target program, in which the user can call to process inputs and produce outputs.
+
+Interpreter: Directly executes operations on the inputs supplied from the user.
+
+\subsection*{Excercise 1.1.2}
+
+\begin{itemize}
+    \item Compiler over Interpreter: Faster execution of programs
+    \item Interpreter over Compiler: Better error reporting 
+\end{itemize}
+
+\subsection*{Excercise 1.1.3}
+Assembly language is easier to produce and debug, in case the compiler has errors in it's manufacturing.
+
+\subsection*{Excercise 1.1.4}
+Using C as a target language is helpful, since it is low level enough to manage memory directly, but high level enough to be easy to read and find errors in the compiler. Another advantage is that C has great compilers that can be used to compile it to machine code.
+
+\subsection*{Excercise 1.1.5}
+The assembler needs 
+\begin{itemize}
+    \item to transate assembly to machine code,
+    \item to resolve jumps and external memory adresses.
+\end{itemize}
+
+\section*{1.3.3 Excercises for Section 1.3}
+
+\subsection*{Excercise 1.3.1}
+\begin{enumerate}
+    \item C
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann
+        \item Third-Generation
+    \end{itemize}
+    \item C++
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann
+        \item Object-oriented 
+        \item Third-Generation
+    \end{itemize}
+    \item Cobol 
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann
+        \item Third-Generation
+    \end{itemize}
+    \item Fortran
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann
+        \item Third-Generation
+    \end{itemize}
+    \item Java
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann
+        \item Object-oriented 
+        \item Third-Generation
+    \end{itemize}
+    \item Lisp
+    \begin{itemize}
+        \item Declarative
+        \item Von Neumann
+        \item Functional 
+        \item Third-Generation
+    \end{itemize}
+    \item ML
+    \begin{itemize}
+        \item Declarative
+        \item Von Neumann
+        \item Functional 
+        \item Third-Generation
+    \end{itemize}
+    \item Perl
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann
+        \item Object-oriented
+        \item Functional 
+        \item Third-Generation
+    \end{itemize}
+    \item Python
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann
+        \item Functional
+        \item Object-oriented  
+        \item Third-Generation
+        \item Scripting
+    \end{itemize}
+    \item VB
+    \begin{itemize}
+        \item Imperative
+        \item Von Neumann 
+        \item Third-Generation
+    \end{itemize}
+\end{enumerate}
+\section*{1.6.8: Excercises for Section 1.6}
+
+\subsection*{Excercise 1.6.1}
+
+\begin{Verbatim}[frame=single]
+    w = 13
+    x = 9
+    y = 13
+    z = 9
+\end{Verbatim}
+
+\subsection*{Excercise 1.6.3}
+
+\begin{Verbatim}[frame=single]
+    w = 9
+    x = 7
+    y = 13
+    z = 7
+\end{Verbatim}
+
+\subsection*{Excercise 1.6.3}
+\begin{Verbatim}
+w defined in B1 has scope B1 - B2
+x defined in B1 has scope B1
+z defined in B1 has scope B1, B3
+y defined in B1 has scope B1 - B4
+x defined in B2 has scope B2
+z defined in B2 has scope B2 - B3
+w defined in B3 has scope B3
+x defined in B3 has scope B3
+w defined in B4 has scope B4 - B5
+x defined in B4 has scope B4 - B5
+y defined in B5 has scope B5
+z defined in B5 has scope B5
+\end{Verbatim}
+
+\subsection*{Excercise 1.6.3}
+    \begin{Verbatim}[frame=single]
+    3
+    2
+    \end{Verbatim}
+\end{document}
