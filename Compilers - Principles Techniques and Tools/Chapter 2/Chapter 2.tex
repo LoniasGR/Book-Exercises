@@ -135,5 +135,80 @@ Way B:
         \textit{expr} \rightarrow \textit{expr}\;\textit{expr}\;\text{op} \mid \text{digit}
     \end{gather*}
     \item 
+    \begin{gather*}
+        \textit{list} \rightarrow \textit{list} \; \text{,} \;\text{id} \mid \text{id}
+    \end{gather*}
+    \item 
+    \begin{gather*}
+        \textit{list} \rightarrow \text{id}\;\text{,}\;\textit{list} \mid \text{id}
+    \end{gather*}
+    \item
+    \begin{gather*}
+        \begin{align*}
+            &\textit{expr} \rightarrow \textit{expr } +  \textit{factor} \mid \textit{expr} \; - \; \textit{factor} \mid \textit{factor}\\
+            &\textit{factor} \rightarrow \textit{factor} * \text{digit} \mid \textit{factor} / \textit{digit} \mid \textit{digit} \\
+            &\textit{digit} \rightarrow \text{id} \mid \text{integer} \mid (\textit{expr})
+        \end{align*}     
+    \end{gather*}
+    \item 
+    \begin{gather*}
+        \begin{align*}
+            &\textit{expr} \rightarrow \textit{expr } +  \textit{factor} \mid \textit{expr} \; - \; \textit{factor} \mid \textit{factor}\\
+            &\textit{factor} \rightarrow \textit{factor} * \text{digit} \mid \textit{factor} / \textit{term} \mid \textit{term} \\
+            &\textit{term} \rightarrow + \textit{digit} \mid - \textit{digit} \mid \textit{digit} \\
+            &\textit{digit} \rightarrow \text{id} \mid \text{integer} \mid (\textit{expr})
+        \end{align*}     
+    \end{gather*}
 \end{enumerate}
+
+\subsection*{Excercise 2.2.5}
+\begin{enumerate}[label=\alph*)]
+\item
+We can easily see that the terminal strings $11$ and $1001$ are both divisible by 3, since they are the binary 3 and 9. These will always be the leaves of the parse tree.
+
+By going one level up, there are two options: 
+\begin{enumerate}[label=\arabic*)]
+\item The first one is the non-terminal $\textit{num}\; 0$:
+
+This operation is the equevalent of multiplying the number we have by two in the decimal system.
+
+It is easy also to see that this non-terminal, is a multiplicate of two, since $3*2$ or $9*2$ is divisible by 3. 
+
+We can also see that going any numbers of levels up on the parse tree and having a number divisible by 3, and having only this non-terminal, the production will be divisible by 3, since $2^{n} * 3 * (\textit{number} \div 3)$ is divisible by 3.
+
+\item The second one is the non-terminal $\textit{num} \; \textit{num}$.
+
+We assume that both nums are divisible by 3, throught the other 3 productions that we saw.
+
+But then the operation will be the number $\text{num}1 * 2^{n} + \text{num}2$, where n is the number of digits of num2.
+
+Since num1 and num2 are divisible by 3, we can rewrite the previous equation as:
+\begin{gather*}
+    \begin{align*}
+        &3* (\text{num}1 \div 3)*2^{n} + 3*(\text{num}2 \div 3) =\\
+        &3 * ((\text{num}1 \div 3)*2^{n} + (\text{num}2 \div 3))
+\end{align*}
+\end{gather*}
+
+So that product will be divisible by 3.
+
+Now if in a higher node we have two nums that are created by this production and they are parts of another production, then again thanks to all the previous mentioned productions, they will be divisible by 3.
+\end{enumerate}
+So all productions of this grammar are divisible by 3.
+
+\item No, the grammar cannot generate the number 10101 ($21_{\text{dec}}$), so it doesn not create all teh strings divisible by 3.
+\end{enumerate}
+
+
+\subsection*{Excercise 2.2.6}
+Information about roman numerals can be found \href{https://en.wikipedia.org/wiki/Roman_numerals}{here}.
+
+\begin{gather*}
+    \begin{align*}
+        &\textit{mill} \rightarrow \text{CM} \; \textit{tenths} \mid \text{M} \; \textit{mill} \mid \textit{fhundr} \\
+        &\textit{fhundr} \rightarrow \text{CD} \; \textit{tenths}  \mid \text{D} \; \textit{tenths}  \mid \text{DC} \; \textit{tenths} \mid \text{DCC} \; \textit{tenths} \mid \text{DCCC} \; \textit{tenths} \mid \textit{hundr} \\
+        &\textit{hundr} \rightarrow      
+    \end{align*}
+\end{gather*}
+
 \end{document}
