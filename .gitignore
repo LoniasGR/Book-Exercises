@@ -1,6 +1,6 @@
 *.swp
 *.exe
-a.out
+*.out
 .vscode
 *.gz
 *.log
