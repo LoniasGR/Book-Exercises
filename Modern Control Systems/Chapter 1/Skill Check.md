@@ -1,3 +1,5 @@
+# Chapter 1 #
+
 ## True of False ##
 
 1. True
@@ -43,3 +45,9 @@
 * The adjustment of the parameters to achieve the most favourable or advantageous design. - __a. Optimization__
 * The process by which new physical configurations are created. - ~~__e. Design__~~ __i. Synthesis__
 * A mechanical device for controlling the speed of a steam engine. - __g. Flyball governor__
+
+## E1.1 ##
+a. GPS
+b. Tachometer
+c. accelerometer
+d
