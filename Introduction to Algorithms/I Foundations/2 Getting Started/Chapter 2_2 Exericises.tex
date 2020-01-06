@@ -72,7 +72,8 @@ The selection-sort will be the following:
   \li   \Do            
         $\id{index} \gets j$
   \li   \For $i \gets j$ \To $\attrib{A}{length}$
-  \li     \If $A[\id{index}] > A[i]$
+  \li     \Do
+          \If $A[\id{index}] > A[i]$
   \li       \Then
               $index \gets i$
             \End
@@ -86,12 +87,20 @@ The selection-sort will be the following:
 The \textbf{loop invariant} of the algorithm is: 
 
 \begin{center} \textit{
-  At the end of each iteration of the outer for loop, the subarray $A[1 \twodots j]$ is fully sorted. }
+  At the start of each iteration of the outer loop, the subarray $A[1 \twodots j-1]$ is fully sorted.}
 \end{center}
+
+Let us see now how the loop invariant properties hold now.
+
+\textbf{Initialization:} We start by showing that the loop invariant holds before the first loop operation, when $j = 1$. The subarray of A is empty, so by definition it is sorted. 
+
+\textbf{Maintenance:} Informally, the body of the second for loop compares $A[\id{index}]$ with $A[i]$ and stores in $\id{index}$ the index of the smallest value in the range $A[j \twodots n]$. The subarray $A[1 \twodots j]$ consists of elements that are smaller or equal to $A[\id{index}]$, as otherwise $A[\id{index}]$ would have been chosen instead of them in the previous iteration.
+
+\textbf{Termination:} We examine what happens when the loop terminates. When the loop terminates the value of $j = \attrib{A}{length} - 1 = n - 1$. Then,  the left subaray $A[1 \twodots j-1]$ is fully sorted based on the maintenance property, so the only item unsorted is the $A[\attrib{A}{length}]$, which has to be bigger or equal than the previous item, as otherwise it would have been chosen in the previous step to be put in the $A[\attrib{A}{length}-1]$ position.
 
 This algorith needs to run only for $n-1$ elements, because during the final iteration ($n-1$), either the whole array is sorted or the last two elements, the $n$ and $n-1$, need to exchange positions. So, as the algorith in each iteration looks ahead and exchanges the element that belongs to that position when sorted with the one that was there beoforehand, there is no further elements to look ahead after the nth element, so it needs n-1 iterations.
 
-In this algorithm, the best-case and worst-case running times are the same, as the inner loop will iterate through the non-sorted part of the array to find the next smallest element. So both the best-case and worst-case running time will be $\theta(n^2)$.
+In this algorithm, the best-case and worst-case running times are the same, as the inner loop will iterate through the non-sorted part of the array to find the next smallest element. So both the best-case and worst-case running time will be $\Theta(n^2)$.
 
 \section*{2.2-3}
 The linear search algorithm is the one below: 
