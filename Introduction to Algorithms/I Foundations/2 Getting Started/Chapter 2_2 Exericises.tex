@@ -1,0 +1,122 @@
+\documentclass{article}
+
+    % Input language encoding
+    \usepackage[utf8]{inputenc}
+   
+    % Output languages
+    %\usepackage[greek, english]{babel}
+    \usepackage{alphabeta}
+    
+    % Fonts
+    %\usepackage[T1,LGR]{fontenc}
+    \usepackage{lmodern}
+
+    % Images
+    \usepackage{graphicx}
+    \graphicspath{ {./images/} }
+    \usepackage{float}
+    \usepackage{caption}
+    \usepackage{subcaption}
+
+    % Math
+    \usepackage{amsmath}
+
+    % Paragraph Formatting
+    \usepackage{parskip}
+
+    % Code
+    \usepackage{listings}
+    \usepackage{clrscode3e}
+
+
+    % Computer Array Drawings
+    \usepackage{tikz}
+    \usetikzlibrary{calc}
+
+    \DeclareMathSizes{10}{10}{10}{10}
+    \setlength{\parindent}{0cm}
+
+    \title{Chapter 2 Part 2 Exercises}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\date{}
+\author{}
+
+\maketitle
+
+\section*{2.2-1}
+
+The function is:
+\begin{equation*}
+  \frac{n^3}{1000} - 100 n^2 - 100 n + 3
+\end{equation*}
+
+This can be equivalently written as:
+\begin{equation*}
+  c_1 {n^3} - c_2 n^2 - c_3 n + c_4
+\end{equation*}
+
+where $c_1 = \frac{1}{1000}, c_2 = c_3 = 100$ and $c_4 = 3$.
+
+Its $\Theta$ notation is $\Theta(n^3)$, because the higest term is $n^3$ and we ignore the factor $c_1$.
+
+\section*{2.2-2}
+
+The selection-sort will be the following:
+
+\begin{codebox}
+  \Procname{$\proc{Selection-Sort}(A)$}
+  \li \For $j \gets 1$ \To $(\attrib{A}{lenght}-1)$
+  \li   \Do            
+        $\id{index} \gets j$
+  \li   \For $i \gets j$ \To $\attrib{A}{length}$
+  \li     \If $A[\id{index}] > A[i]$
+  \li       \Then
+              $index \gets i$
+            \End
+        \End
+  \li     $\id{temp} \gets A[j]$
+  \li     $A[j] \gets A[\id{index}]$
+  \li   $A[\id{index}] \gets \id{temp}$
+      \End
+\end{codebox}
+
+The \textbf{loop invariant} of the algorithm is: 
+
+\begin{center} \textit{
+  At the end of each iteration of the outer for loop, the subarray $A[1 \twodots j]$ is fully sorted. }
+\end{center}
+
+This algorith needs to run only for $n-1$ elements, because during the final iteration ($n-1$), either the whole array is sorted or the last two elements, the $n$ and $n-1$, need to exchange positions. So, as the algorith in each iteration looks ahead and exchanges the element that belongs to that position when sorted with the one that was there beoforehand, there is no further elements to look ahead after the nth element, so it needs n-1 iterations.
+
+In this algorithm, the best-case and worst-case running times are the same, as the inner loop will iterate through the non-sorted part of the array to find the next smallest element. So both the best-case and worst-case running time will be $\theta(n^2)$.
+
+\section*{2.2-3}
+The linear search algorithm is the one below: 
+
+\begin{codebox}
+  \Procname{$\proc{Linear-Search}(A, v)$}
+  \li \While $i \leq \attrib{A}{length}$
+  \li \Do
+        \If $A[i] \isequal v$
+  \li   \Then
+          \Return $i$
+        \End
+  \li     $i \gets i + 1$
+      \End
+  \li \Return \const{nil}
+\end{codebox}
+
+Averagely, over a number of runs of the algorithm, since the element being searched for is equally likely to be any element of the array, the average item would converge in the middle. This happens, because in the case that the element is in the end of the array all the elements will be searched (worst case) and in the case the element we are searching for is in the start of the array, only one element of the array needs to be checked (best case). That means that on average, half the elements would have to be searched to find the element we are looking for. 
+
+As mentioned, the worst case is when the element we are searching for is in the end of the array. Then, we would have to search for all the elements in the array.
+
+It is easy to see from the instructions of the algorithm, that it's time complexity is linear to the number of the elements, so in the average case, $\frac{n}{2}$ iterations of instructions on line 1 and 2 would have to be made, meaning $\Theta(n)$ complexity.
+
+In the worst case, the conditions in line 1 and 2 would have to be checked $n$ times eached, leading to a $\Theta(n)$ complexity. 
+
+\section*{2.2-4}
+In order to have a good best-case time for every algorith, we should modify them to check if the condition of the best case is reached. That way we improve the speed of the algorith in best-case by a lot. For example, if in sorting algorithms we check wether the input is already sorted, their best-case running time would be improved.
+\end{document}

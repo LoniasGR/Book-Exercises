@@ -7,6 +7,7 @@ def selectionsort (arr):
         temp = arr[i]
         arr[i] = arr[index]
         arr[index] = temp
+        #print(arr)
     return arr
 
 # Test
